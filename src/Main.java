@@ -24,7 +24,7 @@ public class Main {
 	
 	
 	
-	
+	// for duplicate characters
 	public static boolean hasDuplicateCharacters(String str) {
 	    Set<Character> charSet = new HashSet<>();
 	   
@@ -32,7 +32,7 @@ public class Main {
 	    for (char c : str.toCharArray()) {
 	        if (charSet.contains(c)) {
 	        	
-	            return true; // Found a duplicate character
+	            return true; 
 	        }
 	        
 	        
@@ -40,7 +40,7 @@ public class Main {
 	        
 	    }
 
-	    return false; // No duplicate characters found
+	    return false; 
 	}
 
 	
@@ -137,7 +137,7 @@ public class Main {
 		
 		
 		
-		System.out.println(hiddenWordsize);
+//		System.out.println(hiddenWordsize);
 		
 		Boolean hasdup = hasDuplicateCharacters(hiddenWord);
 	
@@ -204,18 +204,14 @@ public class Main {
 				
 			}
 			
-			if (guess.equals(hiddenWord)) {
+			if (hiddenWord.equals(hidden.toString())) {
+				
+				System.out.println("!!!You've won!!!");
 				break;
+				
+				
 			}
 		}
-		
-		
-		
-		System.out.println(guess);
-		
-//		
-	
-		
 		
 
 	}
