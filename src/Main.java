@@ -30,7 +30,6 @@ public class Main {
 	    	
 	    	// if the charset already has the character 
 	        if (charSet.contains(c)) {
-	        	System.out.print(c + "\n");
 	            return true; 
 	        }
 	        
@@ -106,6 +105,13 @@ public class Main {
 		sprites.add("  +--+\r\n"
 				+ "  |  |\r\n"
 				+ "  0  |\r\n"
+				+ " /|  |\r\n"
+				+ "     |\r\n"
+				+ "     |\r\n"
+				+ " =====");
+		sprites.add("  +--+\r\n"
+				+ "  |  |\r\n"
+				+ "  0  |\r\n"
 				+ " /|\\ |\r\n"
 				+ "     |\r\n"
 				+ "     |\r\n"
@@ -128,11 +134,11 @@ public class Main {
 		System.out.println("WELCOME TO HANGMAN!\n");
 		
 		// the hiddenword that must be guessed
-//		String hiddenWord = wordPicker(words);
+		String hiddenWord = wordPicker(words);
 //		System.out.println(hiddenWord);
 		
 		// testword only for debugging 
-		String hiddenWord = "carrot";
+//		String hiddenWord = "carrot";
 		
 		int hiddenWordsize = hiddenWord.length();
 		
@@ -218,7 +224,7 @@ public class Main {
 			
 			
 			// player loses
-			if(timesFalse == 6) {
+			if(timesFalse == sprites.size()) {
 				System.out.println("You've lost!");
 				System.out.println("The Right word was :\n" + hiddenWord);
 				break; 
